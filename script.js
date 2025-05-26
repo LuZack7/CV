@@ -1,51 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryWrapper = document.querySelector('.gallery-wrapper');
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-    const images = document.querySelectorAll('.gallery-image');
+// Pobieramy elementy
+const galleryWrapper = document.querySelector('.gallery-wrapper');
+const galleryImages = document.querySelectorAll('.gallery-image');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const modalClose = document.querySelector('.modal-close');
 
-    // Scroll gallery left/right by width of one image + gap
-    const scrollAmount = 150; // image width(140) + gap(10)
-
-    leftArrow.addEventListener('click', () => {
-        galleryWrapper.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+// Funkcja do przewijania galerii
+leftArrow.addEventListener('click', () => {
+    galleryWrapper.scrollBy({
+        left: -200, // przesuwa o 200px w lewo
+        behavior: 'smooth'
     });
+});
 
-    rightArrow.addEventListener('click', () => {
-        galleryWrapper.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+rightArrow.addEventListener('click', () => {
+    galleryWrapper.scrollBy({
+        left: 200, // przesuwa o 200px w prawo
+        behavior: 'smooth'
     });
+});
 
-    // Modal image viewer
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImage');
-    const modalClose = document.getElementById('modalClose');
-
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            modal.style.display = 'block';
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-        });
+// Funkcja do otwierania modalu po kliknięciu na obrazek
+galleryImages.forEach(image => {
+    image.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImage.src = image.src; // ustawiamy powiększony obraz
     });
+});
 
-    modalClose.addEventListener('click', () => {
+// Funkcja do zamykania modalu
+modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
         modal.style.display = 'none';
-        modalImg.src = '';
-        modalImg.alt = '';
-    });
-
-    // Close modal when clicking outside image
-    modal.addEventListener('click', e => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            modalImg.src = '';
-            modalImg.alt = '';
-        }
-    });
+    }
 });
