@@ -271,3 +271,31 @@ aside {
         border-radius: 50%;
     }
 }
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 40px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #0A66C2, #004182);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedin-button i {
+    font-size: 20px;
+}
+
+.linkedin-button:hover,
+.linkedin-button:focus {
+    background: linear-gradient(135deg, #004182, #0A66C2);
+    box-shadow: 0 6px 20px rgba(10, 102, 194, 0.8);
+    outline: none;
+}
