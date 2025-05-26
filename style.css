@@ -31,6 +31,7 @@ aside {
     margin: 25px auto 20px auto;
     border-radius: 6px;
     box-shadow: 0 0 8px #000000a0;
+    width: 200px; /* zmniejszony rozmiar zdjęcia */
 }
 
 .headersecondary {
