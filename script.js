@@ -1,42 +1,57 @@
-// Pobieramy elementy
-const galleryWrapper = document.querySelector('.gallery-wrapper');
-const galleryImages = document.querySelectorAll('.gallery-image');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
-const modal = document.getElementById('modal');
-const modalImage = document.getElementById('modalImage');
-const modalClose = document.querySelector('.modal-close');
+// Gallery horizontal scroll with arrows
+document.addEventListener("DOMContentLoaded", () => {
+    const galleryWrapper = document.querySelector(".gallery-wrapper");
+    const leftArrow = document.querySelector(".left-arrow");
+    const rightArrow = document.querySelector(".right-arrow");
 
-// Funkcja do przewijania galerii
-leftArrow.addEventListener('click', () => {
-    galleryWrapper.scrollBy({
-        left: -200, // przesuwa o 200px w lewo
-        behavior: 'smooth'
+    leftArrow.addEventListener("click", () => {
+        galleryWrapper.scrollBy({
+            left: -180,
+            behavior: "smooth",
+        });
     });
-});
 
-rightArrow.addEventListener('click', () => {
-    galleryWrapper.scrollBy({
-        left: 200, // przesuwa o 200px w prawo
-        behavior: 'smooth'
+    rightArrow.addEventListener("click", () => {
+        galleryWrapper.scrollBy({
+            left: 180,
+            behavior: "smooth",
+        });
     });
-});
 
-// Funkcja do otwierania modalu po kliknięciu na obrazek
-galleryImages.forEach(image => {
-    image.addEventListener('click', () => {
-        modal.style.display = 'block';
-        modalImage.src = image.src; // ustawiamy powiększony obraz
+    // Modal popup for gallery images
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const modalClose = document.getElementById("modalClose");
+    const images = document.querySelectorAll(".gallery-image");
+
+    images.forEach((img) => {
+        img.addEventListener("click", () => {
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            modal.style.display = "block";
+            modal.setAttribute("aria-hidden", "false");
+            modalClose.focus();
+        });
     });
-});
 
-// Funkcja do zamykania modalu
-modalClose.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
+    modalClose.addEventListener("click", () => {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+    });
 
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+    // Close modal on outside click
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+        }
+    });
+
+    // Close modal on ESC key press
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+        }
+    });
 });
