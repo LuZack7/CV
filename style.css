@@ -126,12 +126,12 @@ aside {
 
 .gallery-wrapper {
     display: flex;
-    overflow-x: hidden; /* Ukrywamy paski przewijania */
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
 .gallery-wrapper::-webkit-scrollbar {
-    display: none; /* ukrycie pasków przewijania w webkit */
+    display: none;
 }
 
 .gallery-image {
@@ -150,7 +150,6 @@ aside {
     transform: scale(1.1);
 }
 
-/* Arrow buttons */
 .gallery-arrow {
     position: absolute;
     top: 50%;
@@ -171,11 +170,11 @@ aside {
     background-color: #fb6d3a;
 }
 
-.gallery-arrow.left {
+.gallery-arrow.left-arrow {
     left: 5px;
 }
 
-.gallery-arrow.right {
+.gallery-arrow.right-arrow {
     right: 5px;
 }
 
@@ -241,7 +240,6 @@ aside {
 .circles li {
     position: absolute;
     display: block;
-    list-style: none;
     width: 20px;
     height: 20px;
     background: rgba(255, 255, 255, 0.2);
