@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV ZACHARIASZ MURAWIEC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Zachariasz Murawiec - ICT Technician. Profesjonalne CV, doświadczenie, projekty i umiejętności IT." />
+    <title>CV Zachariasz Murawiec</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
@@ -23,6 +25,10 @@
                     my career. Love learning new skills and information every day. Not afraid to do the research/studying
                     needed to increase my knowledge and abilities.
                 </p>
+                <section class="about-me">
+                    <h3>O mnie</h3>
+                    <p>Jestem zmotywowanym technikiem ICT z doświadczeniem w pracy terenowej oraz wsparciu technicznym. Lubię wyzwania i ciągły rozwój, zwłaszcza w obszarze nowych technologii i bezpieczeństwa IT.</p>
+                </section>
             </section>
 
             <section class="education">
@@ -43,11 +49,11 @@
                 <div class="gallery-container">
                     <button class="gallery-arrow left-arrow" aria-label="Previous">&#9664;</button>
                     <div class="gallery-wrapper">
-                        <img src="photo1.jpg" alt="Project photo 1" class="gallery-image" />
-                        <img src="photo2.jpg" alt="Project photo 2" class="gallery-image" />
-                        <img src="photo3.jpg" alt="Project photo 3" class="gallery-image" />
-                        <img src="photo4.jpg" alt="Project photo 4" class="gallery-image" />
-                        <img src="photo5.jpg" alt="Project photo 5" class="gallery-image" />
+                        <img src="photo1.jpg" alt="Project photo 1" class="gallery-image" loading="lazy" />
+                        <img src="photo2.jpg" alt="Project photo 2" class="gallery-image" loading="lazy" />
+                        <img src="photo3.jpg" alt="Project photo 3" class="gallery-image" loading="lazy" />
+                        <img src="photo4.jpg" alt="Project photo 4" class="gallery-image" loading="lazy" />
+                        <img src="photo5.jpg" alt="Project photo 5" class="gallery-image" loading="lazy" />
                     </div>
                     <button class="gallery-arrow right-arrow" aria-label="Next">&#9654;</button>
                 </div>
@@ -59,6 +65,9 @@
                     <li><span class="list-secondary-item">Oct 2023 – Jun 2024: V4Cloud – Information Field Technician</span></li>
                     <li><span class="list-secondary-item">July 2024 – Present: ICT Technician</span></li>
                 </ul>
+                <a href="https://www.linkedin.com/in/zachariaszmurawiec/" target="_blank" rel="noopener noreferrer" class="linkedin-button" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i> Więcej aktualności na LinkedIn
+                </a>
             </section>
         </main>
 
@@ -112,6 +121,10 @@
         </aside>
     </div>
 
+    <footer>
+        <p>© 2025 Zachariasz Murawiec. All rights reserved.</p>
+    </footer>
+
     <div class="area">
         <ul class="circles">
             <li></li><li></li><li></li><li></li><li></li>
@@ -120,8 +133,8 @@
     </div>
 
     <!-- Modal -->
-    <div id="modal" class="modal">
-        <span id="modalClose" class="modal-close">&times;</span>
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Expanded project photo">
+        <button id="modalClose" class="modal-close" aria-label="Close modal">&times;</button>
         <img class="modal-content" id="modalImage" alt="Expanded project photo" />
     </div>
 
