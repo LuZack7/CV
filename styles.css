@@ -1,107 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
+.certificates, .experience {
+    margin-left: -200px;
+    width: 485px;
+    margin-bottom: 50px;
 }
 
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 40px auto;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar {
-    background-color: #2e3a59;
-    color: #fff;
-    width: 300px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.sidebar h2 {
-    border-bottom: 2px solid #fb6d3a;
-    padding-bottom: 5px;
-    margin-top: 20px;
-}
-
-.sidebar a {
+.certificates h2, .experience h2 {
     color: #fb6d3a;
-    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 10px 0;
-}
-
-.profile-photo {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.content {
-    padding: 40px;
-    width: 100%;
-}
-
-.intro h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.intro h3 {
-    color: #fb6d3a;
-    margin-top: 0;
-    font-weight: 600;
-}
-
-.intro p {
-    line-height: 1.6;
-    max-width: 600px;
-}
-
-.content section {
-    margin-bottom: 40px;
-}
-
-.content h2 {
-    color: #2e3a59;
-    border-bottom: 2px solid #fb6d3a;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.content ul, .content ol {
+.certificates ul, .experience ul {
     padding-left: 20px;
 }
 
-.content li {
+.certificates li, .experience li {
     margin-bottom: 8px;
 }
 
-@media (max-width: 800px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        text-align: center;
-    }
-
-    .content {
-        padding: 20px;
-    }
+.list-secondary-item {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
 }
