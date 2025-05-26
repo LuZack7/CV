@@ -31,7 +31,8 @@ aside {
     margin: 25px auto 20px auto;
     border-radius: 6px;
     box-shadow: 0 0 8px #000000a0;
-    width: 200px; /* zmniejszony rozmiar zdjęcia */
+    max-width: 150px; /* zmniejszone */
+    height: auto;
 }
 
 .headersecondary {
@@ -103,15 +104,6 @@ aside {
 .education {
     max-width: 600px;
     margin-bottom: 40px;
-}
-
-.rok {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    margin-top: 10px;
-    margin-left: 1px;
-    color: #fb6d3a;
 }
 
 .certificates {
